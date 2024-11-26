@@ -2,28 +2,28 @@
 
 # Parsers
 
-ElfDirections ↚ (
+ElfInstructions ↚ (
   ⊗:"^v><"                 # Arrow indices
   ≡(⊡:[1_0 ¯1_0 0_1 0_¯1]) # Cardinal moves
 )
 
 # Functions
 
-SI ↚ \+ ⊂(0_0) # Scan instructions
+ScanMoves ↚ \+ ⊂(0_0) # Scan elf instructions
 
-CU ↚ /+ ◰ # Count unique
+CountUnique ↚ /+ ◰ # Count unique
 
 # Exports
 
 UniqueHouses ← (
-  ElfDirections
-  SI
-  CU # Count unique
+  ElfInstructions
+  ScanMoves
+  CountUnique # Count unique
 )
 
 RoboSantaUniqueHouses ← (
-  ElfDirections
-  ¬,, ◿2 °⊏ # Mask even and odd positions
-  ∩(SI▽)    # Santa and Robo-Santa team up
-  CU ⊂      # Count unique
+  ElfInstructions
+  ¬,, ◿2 °⊏     # Mask even and odd positions
+  ∩(ScanMoves▽) # Santa and Robo-Santa team up
+  CountUnique⊂  # Count unique
 )

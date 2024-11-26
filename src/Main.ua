@@ -1,24 +1,54 @@
 # Experimental!
 
-~ "RandomUtils.ua" ~ Lines
+~ "RandomUtils.ua" ~ Lines LinesF! WordsF!
 ~ "NotQuiteLisp.ua" ~ FinalFloor WhenBasement
 ~ "IWasToldThereWouldBeNoMath.ua" ~ TotalRibbon TotalWrappingPaper
 ~ "PerfectlySphericalHousesInAVacuum.ua" ~ RoboSantaUniqueHouses UniqueHouses
+~ "TheIdealStockingStuffer.ua" ~ FindNonce₅ FindNonce₆
+~ "DoesntHeHaveInternElvesForThis.ua" ~ BetterNiceStringsCount NiceStringsCount
+~ "ProbablyAFireHazard.ua" ~ SantaLightsBrightness SantaLightsOn
 
-PrettySolution‼‼ ← (
-  # Solve problem
-  ^2 &fras $"src/resources/_.in" ^1
-  # Compose message (keep solution)
-  ⟜($"_. _ -> _" ^0 ^1)
-  # Check for correctness (keep solution)
-  ⟜(=^3)
-  # Assert correctness
-  ⍤($"Wrong solution for _ part _: expected _, but got _" ^1 ^0 ^3)
+Resources ← comptime(
+  # Read resource files
+  &fld "src/resources"
+  ⟜≡⍜°□&fras
+  # Map filenames to contents
+  ≡(□⊙◌ °$"src/resources/_._")
+  map
 )
 
-PrettySolution₂‼‼! ← (
-  PrettySolution‼‼2 ^0 ^3 ^4
-  PrettySolution‼‼1 ^0 ^1 ^2
+GetResource ← °□ get:Resources
+
+PuzzleAnswers ← comptime(
+  # Read puzzle answers
+  GetResource "PuzzleAnswers"
+  # Separate strings
+  LinesF!(
+    WordsF!□
+  )
+  # Prepare keys, parse integers
+  ⍜⍉°⊂
+  ⊙∵⋕
+  # Create map
+  map
+)
+
+PrettySolution‼! ← (
+  # Solve problem
+  ^2 GetResource ^1
+  # Compose message (keep solution)
+  ⟜($"_. _ -> _" ^0 ^1)
+  # Get puzzle answer from hashmap
+  ⊡(-1^0) get ^1 PuzzleAnswers
+  # Check for correctness (keep solution)
+  ⊃⊙∘=
+  # Assert correctness
+  ⍤($"Wrong solution for _ part _: expected _, but got _" ^1 ^0)
+)
+
+PrettySolution₂‼! ← (
+  PrettySolution‼!2 ^0 ^2
+  PrettySolution‼!1 ^0 ^1
   $"_\n_\n"
 )
 
@@ -30,7 +60,10 @@ PrettySolution₂‼‼! ← (
   ≡(□$"Day _\n_")
   °Lines
 ) {
-  PrettySolution₂‼‼!"NotQuiteLisp" FinalFloor 232 WhenBasement 1783
-  PrettySolution₂‼‼!"IWasToldThereWouldBeNoMath" TotalWrappingPaper 1586300 TotalRibbon 3737498
-  PrettySolution₂‼‼!"PerfectlySphericalHousesInAVacuum" UniqueHouses 2592 RoboSantaUniqueHouses 2360
+  PrettySolution₂‼!"NotQuiteLisp" FinalFloor WhenBasement
+  PrettySolution₂‼!"IWasToldThereWouldBeNoMath" TotalWrappingPaper TotalRibbon
+  PrettySolution₂‼!"PerfectlySphericalHousesInAVacuum" UniqueHouses RoboSantaUniqueHouses
+  PrettySolution₂‼!"TheIdealStockingStuffer" FindNonce₅ FindNonce₆
+  PrettySolution₂‼!"DoesntHeHaveInternElvesForThis" NiceStringsCount BetterNiceStringsCount
+  PrettySolution₂‼!"ProbablyAFireHazard" SantaLightsOn SantaLightsBrightness
 }

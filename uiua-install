@@ -1,0 +1,3 @@
+#!/bin/bash
+
+uiua stand src/Main.ua -o $HOME/.local/bin/AoC2015-Uiua

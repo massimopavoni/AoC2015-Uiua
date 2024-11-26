@@ -1,16 +1,20 @@
 # Random Utils
 
-# Split array by delimiter and apply function on elements
+# Apply function on array split by delimiter
 # Elems ? Function Delimiter Array
-SB! ← ⊜^0 ⊸≠
+SplitF! ← ⊜^0 ⊸≠
 
-# Split string by newline and apply function on elements
+# Apply function on string split by space
+# Elems ? Function Delimiter String
+WordsF! ← SplitF!^0 @ 
+
+# Apply function on string split by newline
 # Elems ? Function String
-LF! ← SB!^0 @\n
+LinesF! ← SplitF!^0 @\n
 
 # Split string by newline, inverse intersperses newlines
 # Elems ? String
 Lines ← ⌅(
-  LF!□
+  LinesF!□
 | /$"_\n_" # Inverse intersperse newline
 )

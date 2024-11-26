@@ -1,6 +1,4 @@
-# Experimental!
-
-~ "RandomUtils.ua" ~ LF! SB!
+~ "RandomUtils.ua" ~ LinesF! SplitF!
 
 # I Was Told There Would Be No Math
 
@@ -8,32 +6,30 @@
 
 PresentDimensions ↚ (
   # Split by newline
-  LF!(
-    SB!⋕ @x # Parse integers split by x
+  LinesF!(
+    SplitF!⋕ @x # Parse integers split by x
   )
 )
 
 # Functions
 
-SE! ↚ /^0 ↙ ⊙⍆ # Reduce with 0 smallest n elements
-
-RSS! ↚ /+ + ≡^0 # Sum everything after apply 0 on rows
+RowSumSum! ↚ /+ + ≡^0 # Apply function on rows and sum everything
 
 # Exports
 
 TotalWrappingPaper ← (
   PresentDimensions
-  RSS!(
+  RowSumSum!(
     × ↻1 . # Combination products
-    ⟜(/↧)  # Smallest side area
+    ⟜/↧    # Smallest side area
     /+ ×2  # Surface area
   )
 )
 
 TotalRibbon ← (
   PresentDimensions
-  RSS!⊃(
-    /×       # Volume
-  | ×2 SE!+2 # Smallest perimeter
+  RowSumSum!⊃(
+    /×         # Volume
+  | ×2 /+ ↙2 ⍆ # Smallest perimeter
   )
 )
