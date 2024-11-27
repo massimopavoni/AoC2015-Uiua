@@ -46,24 +46,24 @@ PrettySolution‼! ← (
   ⍤($"Wrong solution for _ part _: expected _, but got _" ^1 ^0)
 )
 
-PrettySolution₂‼! ← (
-  PrettySolution‼!2 ^0 ^2
-  PrettySolution‼!1 ^0 ^1
-  $"_\n_\n"
+PrettySolution₂‼‼ ← (
+  # Day
+  &p $"Day _" ^0
+  # Part 1
+  &p PrettySolution‼!1 ^1 ^2
+  # Part 2 if not Christmas
+  =25^0
+  ⨬(&p PrettySolution‼!2 ^1 ^3
+  | &pf"")
+  &p ""
 )
 
 # Print solutions one day at a time
 &p $ AoC 2015 - Uiua
    $ 
-&p (
-  +1°⊏
-  ≡(□$"Day _\n_")
-  °Lines
-) {
-  PrettySolution₂‼!"NotQuiteLisp" FinalFloor WhenBasement
-  PrettySolution₂‼!"IWasToldThereWouldBeNoMath" TotalWrappingPaper TotalRibbon
-  PrettySolution₂‼!"PerfectlySphericalHousesInAVacuum" UniqueHouses RoboSantaUniqueHouses
-  PrettySolution₂‼!"TheIdealStockingStuffer" FindNonce₅ FindNonce₆
-  PrettySolution₂‼!"DoesntHeHaveInternElvesForThis" NiceStringsCount BetterNiceStringsCount
-  PrettySolution₂‼!"ProbablyAFireHazard" SantaLightsOn SantaLightsBrightness
-}
+PrettySolution₂‼‼1 "NotQuiteLisp" FinalFloor WhenBasement
+PrettySolution₂‼‼2 "IWasToldThereWouldBeNoMath" TotalWrappingPaper TotalRibbon
+PrettySolution₂‼‼3 "PerfectlySphericalHousesInAVacuum" UniqueHouses RoboSantaUniqueHouses
+PrettySolution₂‼‼4 "TheIdealStockingStuffer" FindNonce₅ FindNonce₆
+PrettySolution₂‼‼5 "DoesntHeHaveInternElvesForThis" NiceStringsCount BetterNiceStringsCount
+PrettySolution₂‼‼6 "ProbablyAFireHazard" SantaLightsOn SantaLightsBrightness

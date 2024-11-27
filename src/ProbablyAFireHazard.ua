@@ -34,6 +34,6 @@ SantaLights! ↚ (
 
 # Exports
 
-SantaLightsOn ← SantaLights!(>0 ⨬(-1|+1|¬))
+SantaLightsOn ← SantaLights!⨬(↧0|↥1|¬)
 
-SantaLightsBrightness ← SantaLights!(↥0 ⨬(-1|+1|+2))
+SantaLightsBrightness ← SantaLights!⨬(↥0 -1|+1|+2)
