@@ -1,4 +1,4 @@
-# Random Utils
+# Random Utils/Split
 
 # Apply function on array split by delimiter
 # Elems ? Function Delimiter Array

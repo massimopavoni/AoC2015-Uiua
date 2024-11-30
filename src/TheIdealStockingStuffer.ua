@@ -17,13 +17,13 @@ MD₅ ↚ (
   }
   ⟜(&memcpy "unsigned char":16) # Get result array
   &memfree
-  ⍜⇌/⊂ base 16 # Convert to hex array
+  ⍜⇌/⊂ base₁₆ # Convert to hex array
 )
 
 FindNonce! ↚ (
-  ⍢(+1)(
+  ⍢(+₁)(
     MD₅ ⊂:°⋕  # Append nonce candidate and hash
-    ≠0 /+ ↙^0 # Check hash for n leading zeroes
+    ≠₀ /+ ↙^0 # Check hash for n leading zeroes
   ) 0
   ⊙◌
 )

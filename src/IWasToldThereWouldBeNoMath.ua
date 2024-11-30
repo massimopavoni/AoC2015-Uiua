@@ -1,4 +1,4 @@
-~ "RandomUtils.ua" ~ LinesF! SplitF!
+~ "RandomUtils/Split.ua" ~ LinesF! SplitF!
 
 # I Was Told There Would Be No Math
 
@@ -20,9 +20,9 @@ RowSumSum! ↚ /+ + ≡^0 # Apply function on rows and sum everything
 TotalWrappingPaper ← (
   PresentDimensions
   RowSumSum!(
-    × ↻1 . # Combination products
+    × ↻₁ . # Combination products
     ⟜/↧    # Smallest side area
-    /+ ×2  # Surface area
+    /+ ×₂  # Surface area
   )
 )
 
@@ -30,6 +30,6 @@ TotalRibbon ← (
   PresentDimensions
   RowSumSum!⊃(
     /×         # Volume
-  | ×2 /+ ↙2 ⍆ # Smallest perimeter
+  | ×₂ /+ ↙₂ ⍆ # Smallest perimeter
   )
 )

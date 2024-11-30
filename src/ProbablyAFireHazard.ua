@@ -1,4 +1,5 @@
-~ "RandomUtils.ua" ~ Lines LinesF!
+~ "RandomUtils/Split.ua" ~ LinesF!
+~ "RandomUtils/Regex.ua" ~ EG G P! R Rnum
 
 # Probably A Fire Hazard
 
@@ -6,11 +7,14 @@
 
 SantaInstructions ↚ (
   LinesF!(
-    regex$"(.*) _.*?_" .$"_,_" ."(\\d+)" # Regex match line format
-    ↘1 °¤                                # Extract instruction info
+    EG R P!{
+      ".+(.) "       # Action last letter
+      , ".*?"        # Two points
+      $"_,_". G Rnum # Point coordinates
+    }
     ⍜°⊂(
-      ⊗:"fne" ⊣°□ # Action index
-      ⋕:          # Parse coordinates numbers
+      ◇⊗:"fne" # Action index
+      ⋕:       # Parse coordinates numbers
     )
   )
   ⍜⊙⍉⍜⊏⇌ 1_2 # Middle flip for same axis coordinates
@@ -22,9 +26,9 @@ SantaLights! ↚ (
   SantaInstructions  # Parse instructions
   : ↯1000_1000 0     # Initialize grid
   ∧(⊃(°⊟ ↯2_2        # Reshape rectangle coordinates
-      ∩(⍜-⇡ ⊙+:1 °⊟) # Get coordinate ranges
-      ⊞⊂             # Get pixel positions
-    | ⊣              # Get action index
+      ∩(⍜-⇡ °⊟ ⍜⊣+₁) # Coordinate ranges
+      ⊞⊂             # Pixel positions
+    | ⊣              # Action index
     )
     ⊙:       # Retrieve lights state
     ⍜⊡(^0 :) # Update lights region with action
@@ -34,6 +38,6 @@ SantaLights! ↚ (
 
 # Exports
 
-SantaLightsOn ← SantaLights!⨬(↧0|↥1|¬)
+SantaLightsOn ← SantaLights!⨬(↧₀|↥₁|¬)
 
-SantaLightsBrightness ← SantaLights!⨬(↥0 -1|+1|+2)
+SantaLightsBrightness ← SantaLights!⨬(↥₀ -₁|+₁|+₂)

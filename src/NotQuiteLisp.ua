@@ -16,5 +16,5 @@ FinalFloor ← (
 
 WhenBasement ← (
   LispToMoves
-  +1 ⊗¯1 \+ # First basement index
+  +₁ ⊗¯1 \+ # First basement index
 )

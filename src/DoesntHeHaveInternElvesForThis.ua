@@ -1,4 +1,5 @@
-~ "RandomUtils.ua" ~ LinesF!
+~ "RandomUtils/Split.ua" ~ LinesF!
+~ "RandomUtils/Regex.ua" ~ R
 
 # Doesn't He Have Intern-Elves For This?
 
@@ -6,17 +7,17 @@
 
 NiceStringsCount ← /+ LinesF!(
   ×× ⊃(
-    ≥3/+ ∈"aeiou"                  # At least 3 vowels
-  | ≠1⊣⍆ ⊜⧻. utf₈                  # At least 1 letter that appears twice in a row
-  | =0/+ ∈["ab" "cd" "pq" "xy"] ◫2 # No forbidden substrings
+    ≥₃/+ ∈"aeiou"                # At least 3 vowels
+  | ≠₁⊣⍆ ⊜⧻. utf₈                # At least 1 letter that appears twice in a row
+  | =₀/+ ∈"ab"_"cd"_"pq"_"xy" ◫₂ # No forbidden substrings
   )
 )
 
 BetterNiceStringsCount ← /+ LinesF!(
   × ⊃(
-    ◴ ⊃(◫2|¤)           # Non-overlapping pairs
-    ⊞(⧻ regex$"_.*_" .) # Match on original string
-    ≠0 ⊢/+              # At least two pairs
-  | ≥1 /+ ≡(= ⊃⊢⊣) ◫3   # At least one letter repeated with a letter in between
+    ◴ ⊃(◫₂|¤)         # Non-overlapping pairs
+    ⊞(⧻ R$"_.*?_".)   # Match on original string
+    ≠₀ ⊢/+            # At least two pairs
+  | ≥₁ /+ ≡(= ⊃⊢⊣) ◫₃ # At least one letter repeated with a letter in between
   )
 )

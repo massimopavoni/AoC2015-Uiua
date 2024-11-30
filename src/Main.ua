@@ -1,6 +1,6 @@
 # Experimental!
 
-~ "RandomUtils.ua" ~ Lines LinesF! WordsF!
+~ "RandomUtils/Split.ua" ~ LinesF! WordsF!
 ~ "NotQuiteLisp.ua" ~ FinalFloor WhenBasement
 ~ "IWasToldThereWouldBeNoMath.ua" ~ TotalRibbon TotalWrappingPaper
 ~ "PerfectlySphericalHousesInAVacuum.ua" ~ RoboSantaUniqueHouses UniqueHouses
@@ -28,7 +28,7 @@ PuzzleAnswers ← comptime(
   )
   # Prepare keys, parse integers
   ⍜⍉°⊂
-  ⊙∵⋕
+  ⊙≡⋕
   # Create map
   map
 )
@@ -39,7 +39,7 @@ PrettySolution‼! ← (
   # Compose message (keep solution)
   ⟜($"_. _ -> _" ^0 ^1)
   # Get puzzle answer from hashmap
-  ⊡(-1^0) get ^1 PuzzleAnswers
+  ⊡(-₁ ^0) get ^1 PuzzleAnswers
   # Check for correctness (keep solution)
   ⊃⊙∘=
   # Assert correctness
@@ -52,7 +52,7 @@ PrettySolution₂‼‼ ← (
   # Part 1
   &p PrettySolution‼!1 ^1 ^2
   # Part 2 if not Christmas
-  =25^0
+  =₂₅ ^0
   ⨬(&p PrettySolution‼!2 ^1 ^3
   | &pf"")
   &p ""

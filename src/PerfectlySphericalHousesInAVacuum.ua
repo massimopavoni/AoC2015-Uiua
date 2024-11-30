@@ -9,7 +9,7 @@ ElfInstructions ↚ (
 
 # Functions
 
-ScanMoves ↚ \+ ⊂(0_0) # Scan elf instructions
+ScanMoves ↚ \+ ⊂0_0 # Scan elf instructions
 
 CountUnique ↚ /+ ◰ # Count unique
 
@@ -23,7 +23,7 @@ UniqueHouses ← (
 
 RoboSantaUniqueHouses ← (
   ElfInstructions
-  ¬,, ◿2 °⊏     # Mask even and odd positions
+  ¬,, ◿₂ °⊏     # Mask even and odd positions
   ∩(ScanMoves▽) # Santa and Robo-Santa team up
   CountUnique⊂  # Count unique
 )
