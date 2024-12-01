@@ -34,6 +34,3 @@ S ← $"_ "
 
 # One or more digits, number
 Rnum ← "\\d+"
-
-# One or more lowercase letters, identifier
-Rid ← "[a-z]+"

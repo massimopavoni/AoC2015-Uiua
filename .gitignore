@@ -1,7 +1,5 @@
 # AoC ignores
 resources/
-*.in
-bin/
 
 ### VisualStudioCode ###
 .vscode/*
