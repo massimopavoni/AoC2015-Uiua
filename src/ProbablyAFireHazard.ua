@@ -3,6 +3,7 @@
 
 # Probably A Fire Hazard
 
+# ------------------------------------------------------------------------------------------------
 # Parsers
 
 SantaInstructions ↚ (
@@ -20,6 +21,7 @@ SantaInstructions ↚ (
   ⍜⊙⍉⍜⊏⇌ 1_2 # Middle flip for same axis coordinates
 )
 
+# ------------------------------------------------------------------------------------------------
 # Functions
 
 SantaLights! ↚ (
@@ -36,6 +38,7 @@ SantaLights! ↚ (
   /+ ♭ # Count lights on
 )
 
+# ------------------------------------------------------------------------------------------------
 # Exports
 
 SantaLightsOn ← SantaLights!⨬(↧₀|↥₁|¬)

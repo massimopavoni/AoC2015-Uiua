@@ -1,5 +1,6 @@
 # Perfectly Spherical Houses In A Vacuum
 
+# ------------------------------------------------------------------------------------------------
 # Parsers
 
 ElfInstructions ↚ (
@@ -7,12 +8,14 @@ ElfInstructions ↚ (
   ≡(⊡:[1_0 ¯1_0 0_1 0_¯1]) # Cardinal moves
 )
 
+# ------------------------------------------------------------------------------------------------
 # Functions
 
 ScanMoves ↚ \+ ⊂0_0 # Scan elf instructions
 
 CountUnique ↚ /+ ◰ # Count unique
 
+# ------------------------------------------------------------------------------------------------
 # Exports
 
 UniqueHouses ← (
