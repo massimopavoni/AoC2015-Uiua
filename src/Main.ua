@@ -7,6 +7,10 @@
 ~ "TheIdealStockingStuffer.ua" ~ FindNonce₅ FindNonce₆
 ~ "DoesntHeHaveInternElvesForThis.ua" ~ BetterNiceStringsCount NiceStringsCount
 ~ "ProbablyAFireHazard.ua" ~ SantaLightsBrightness SantaLightsOn
+~ "SomeAssemblyRequired.ua" ~ OverriddenWireASignal WireASignal
+
+# ------------------------------------------------------------------------------------------------
+# Resources
 
 Resources ← comptime(
   # Read resource files
@@ -33,6 +37,9 @@ PuzzleAnswers ← comptime(
   map
 )
 
+# ------------------------------------------------------------------------------------------------
+# Functions
+
 PrettySolution‼! ← (
   # Solve problem
   ^2 GetResource ^1
@@ -54,9 +61,12 @@ PrettySolution₂‼‼ ← (
   # Part 2 if not Christmas
   =₂₅ ^0
   ⨬(&p PrettySolution‼!2 ^1 ^3
-  | &pf"")
+  | )
   &p ""
 )
+
+# ------------------------------------------------------------------------------------------------
+# Exports
 
 # Print solutions one day at a time
 &p $ AoC 2015 - Uiua
@@ -67,3 +77,4 @@ PrettySolution₂‼‼3 "PerfectlySphericalHousesInAVacuum" UniqueHouses RoboSa
 PrettySolution₂‼‼4 "TheIdealStockingStuffer" FindNonce₅ FindNonce₆
 PrettySolution₂‼‼5 "DoesntHeHaveInternElvesForThis" NiceStringsCount BetterNiceStringsCount
 PrettySolution₂‼‼6 "ProbablyAFireHazard" SantaLightsOn SantaLightsBrightness
+PrettySolution₂‼‼7 "SomeAssemblyRequired" WireASignal OverriddenWireASignal
