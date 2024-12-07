@@ -30,9 +30,8 @@ PuzzleAnswers ← comptime(
   LinesF!(
     WordsF!□
   )
-  # Prepare keys, parse integers
+  # Prepare keys
   ⍜⍉°⊂
-  ⊙≡⋕
   # Create map
   map
 )
@@ -42,13 +41,13 @@ PuzzleAnswers ← comptime(
 
 PrettySolution‼! ← (
   # Solve problem
-  ^2 GetResource ^1
+  $"_" ^2 GetResource ^1
   # Compose message (keep solution)
   ⟜($"_. _ -> _" ^0 ^1)
   # Get puzzle answer from hashmap
-  ⊡(-₁ ^0) get ^1 PuzzleAnswers
+  °□ ⊡(-₁ ^0) get ^1 PuzzleAnswers
   # Check for correctness (keep solution)
-  ⊃⊙∘=
+  ⊃⊙∘(/* =)
   # Assert correctness
   ⍤($"Wrong solution for _ part _: expected _, but got _" ^1 ^0)
 )
