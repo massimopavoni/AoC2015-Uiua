@@ -41,25 +41,25 @@ PuzzleAnswers ← comptime(
 
 PrettySolution‼! ← (
   # Solve problem
-  $"_" ^2 GetResource ^1
+  $"_" ^2 GetResource ^0
   # Compose message (keep solution)
-  ⟜($"_. _ -> _" ^0 ^1)
+  ⟜($"_ -> _" ^1)
   # Get puzzle answer from hashmap
-  °□ ⊡(-₁ ^0) get ^1 PuzzleAnswers
+  ⊡(-₁ ^1) get ^0 PuzzleAnswers
   # Check for correctness (keep solution)
-  ⊃⊙∘(/* =)
+  ⊃⊙∘= ⊙□
   # Assert correctness
-  ⍤($"Wrong solution for _ part _: expected _, but got _" ^1 ^0)
+  ⍤($"Wrong solution for _ part _: expected _, but got _" ^0 ^1)
 )
 
 PrettySolution₂‼‼ ← (
   # Day
-  &p $"Day _" ^0
+  &p $"Day _: _" ^0 ^1
   # Part 1
-  &p PrettySolution‼!1 ^1 ^2
+  &p PrettySolution‼!^1 1 ^2
   # Part 2 if not Christmas
   =₂₅ ^0
-  ⨬(&p PrettySolution‼!2 ^1 ^3
+  ⨬(&p PrettySolution‼!^1 2 ^3
   | )
   &p ""
 )
